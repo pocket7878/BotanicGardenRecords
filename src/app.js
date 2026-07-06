@@ -113,8 +113,11 @@ function gardenCard(garden) {
           data-season="${season.key}"
           aria-pressed="${record[season.key] ? "true" : "false"}"
         >
-          <strong>${season.label}</strong>
-          <small>${season.note}</small>
+          <img src="${season.stamp}" alt="" loading="lazy">
+          <span>
+            <strong>${season.label}</strong>
+            <small>${record[season.key] ? "採集印あり" : season.note}</small>
+          </span>
         </button>
       `).join("")}
     </div>

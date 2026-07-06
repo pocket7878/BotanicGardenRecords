@@ -20,6 +20,9 @@ const seasonKeys = SEASONS.map((season) => season.key);
 
 assert(GARDENS.length >= 40, `Expected at least 40 gardens, got ${GARDENS.length}`);
 assert(JSON.stringify(seasonKeys) === JSON.stringify(["spring", "summer", "autumn", "winter"]), "Season keys changed unexpectedly");
+for (const season of SEASONS) {
+  assert(typeof season.stamp === "string" && season.stamp.startsWith("./assets/stamps/"), `${season.key} is missing stamp path`);
+}
 
 for (const garden of GARDENS) {
   assert(/^[a-z0-9-]+$/.test(garden.id), `Garden id must be ASCII kebab-case: ${garden.id}`);

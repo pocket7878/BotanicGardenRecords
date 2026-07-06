@@ -1,8 +1,8 @@
 export const SEASONS = [
-  { key: "spring", label: "春", note: "芽吹きと花" },
-  { key: "summer", label: "夏", note: "緑陰と温室" },
-  { key: "autumn", label: "秋", note: "実りと紅葉" },
-  { key: "winter", label: "冬", note: "冬芽と温室" },
+  { key: "spring", label: "春", note: "芽吹きと花", stamp: "./assets/stamps/spring.png" },
+  { key: "summer", label: "夏", note: "緑陰と温室", stamp: "./assets/stamps/summer.png" },
+  { key: "autumn", label: "秋", note: "実りと紅葉", stamp: "./assets/stamps/autumn.png" },
+  { key: "winter", label: "冬", note: "冬芽と温室", stamp: "./assets/stamps/winter.png" },
 ];
 
 export const REGION_ORDER = [
