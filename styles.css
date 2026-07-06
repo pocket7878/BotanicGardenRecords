@@ -370,8 +370,7 @@ select {
   overflow: hidden;
 }
 
-.season-button strong,
-.season-button small {
+.season-button strong {
   display: block;
 }
 
@@ -388,11 +387,6 @@ select {
 .season-button strong {
   font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
   font-size: 1.1rem;
-}
-
-.season-button small {
-  color: var(--muted);
-  font-size: 0.72rem;
 }
 
 .season-button.is-visited {
