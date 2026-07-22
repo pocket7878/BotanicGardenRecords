@@ -1,5 +1,6 @@
 import { GARDENS, REGION_ORDER, SEASONS } from "../src/data/gardens.js";
 import { parseImportedState, serializeState } from "../src/storage.js";
+import { readFileSync } from "node:fs";
 
 const REQUIRED_IDS = [
   "sakuya-konohana-kan",
@@ -62,5 +63,12 @@ for (const malformed of ["not-json", "[]", "{\"visited\":[]}"]) {
   }
   assert(rejected, `Malformed import was accepted: ${malformed}`);
 }
+
+const siteUrl = "https://pocket7878.github.io/BotanicGardenRecords/";
+const sitemap = readFileSync(new URL("../sitemap.xml", import.meta.url), "utf8");
+const robots = readFileSync(new URL("../robots.txt", import.meta.url), "utf8");
+
+assert(sitemap.includes(`<loc>${siteUrl}</loc>`), "Sitemap is missing the public site URL");
+assert(robots.includes(`Sitemap: ${siteUrl}sitemap.xml`), "robots.txt is missing the sitemap reference");
 
 console.log(`PASS: validated ${GARDENS.length} gardens, ${SEASONS.length} seasons, and storage imports.`);

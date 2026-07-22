@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://pocket7878.github.io/BotanicGardenRecords/sitemap.xml
