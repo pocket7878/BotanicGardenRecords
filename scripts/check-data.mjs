@@ -1,6 +1,6 @@
 import { GARDENS, REGION_ORDER, SEASONS } from "../src/data/gardens.js";
 import { parseImportedState, serializeState } from "../src/storage.js";
-import { readFileSync } from "node:fs";
+import { existsSync, readFileSync } from "node:fs";
 
 const REQUIRED_IDS = [
   "sakuya-konohana-kan",
@@ -70,5 +70,17 @@ const robots = readFileSync(new URL("../robots.txt", import.meta.url), "utf8");
 
 assert(sitemap.includes(`<loc>${siteUrl}</loc>`), "Sitemap is missing the public site URL");
 assert(robots.includes(`Sitemap: ${siteUrl}sitemap.xml`), "robots.txt is missing the sitemap reference");
+
+const indexHtml = readFileSync(new URL("../index.html", import.meta.url), "utf8");
+assert(indexHtml.includes("植物園四季採集帖｜植物園の訪問記録を残すアプリ"), "Page title is missing the approved visitor-log wording");
+assert(indexHtml.includes("訪れた季節を、あなたの標本帳に。"), "Page is missing the approved specimen-book heading");
+assert(indexHtml.includes("記録はどこに保存されますか？"), "Page is missing the storage FAQ");
+assert(indexHtml.includes("機種変更やブラウザを変えた場合は？"), "Page is missing the transfer FAQ");
+assert(indexHtml.includes("四季すべてを記録しなければいけませんか？"), "Page is missing the seasonal-record FAQ");
+assert(indexHtml.includes('property="og:image" content="https://pocket7878.github.io/BotanicGardenRecords/assets/ogp.png"'), "Page is missing the OGP image");
+assert(indexHtml.includes('property="og:title"'), "Page is missing the OGP title");
+assert(indexHtml.includes('property="og:description"'), "Page is missing the OGP description");
+assert(indexHtml.includes('property="og:url"'), "Page is missing the OGP URL");
+assert(existsSync(new URL("../assets/ogp.png", import.meta.url)), "OGP image file is missing");
 
 console.log(`PASS: validated ${GARDENS.length} gardens, ${SEASONS.length} seasons, and storage imports.`);

@@ -188,6 +188,79 @@ h1 {
   color: var(--muted);
 }
 
+.about-records,
+.faq {
+  margin-top: 18px;
+  padding: 24px 28px;
+  border: 1px solid var(--line);
+  background: rgba(255, 253, 247, 0.8);
+  box-shadow: 0 10px 24px rgba(52, 42, 24, 0.06);
+}
+
+.about-records {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(280px, 0.7fr);
+  gap: 28px;
+  align-items: center;
+}
+
+.section-kicker {
+  margin: 0 0 4px;
+  color: var(--gold);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.about-records h2,
+.faq h2 {
+  margin: 0;
+  font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
+  font-size: clamp(1.45rem, 3vw, 2.1rem);
+  line-height: 1.35;
+}
+
+.about-records p:not(.section-kicker) {
+  margin: 12px 0 0;
+  color: var(--muted);
+}
+
+.how-to-use {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: how-to;
+}
+
+.how-to-use li {
+  display: grid;
+  grid-template-columns: 42px 1fr;
+  gap: 10px;
+  align-items: center;
+  padding: 12px;
+  border: 1px solid var(--line-green);
+  background: rgba(220, 231, 211, 0.38);
+}
+
+.how-to-use strong {
+  display: grid;
+  width: 38px;
+  height: 38px;
+  place-items: center;
+  border: 1px solid var(--leaf);
+  border-radius: 50%;
+  color: var(--leaf);
+  font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
+}
+
+.how-to-use span {
+  color: var(--muted);
+  font-size: 0.88rem;
+  line-height: 1.45;
+}
+
 .toolbar,
 .actions {
   display: grid;
@@ -428,6 +501,34 @@ select {
   border-bottom: 1px solid currentColor;
 }
 
+.faq {
+  margin-top: 28px;
+}
+
+.faq h2 {
+  margin-bottom: 14px;
+}
+
+.faq details {
+  border-top: 1px solid #d6ccb1;
+}
+
+.faq details:last-child {
+  border-bottom: 1px solid #d6ccb1;
+}
+
+.faq summary {
+  padding: 14px 28px 14px 0;
+  color: var(--leaf);
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.faq p {
+  margin: 0 0 14px;
+  color: var(--muted);
+}
+
 :focus-visible {
   outline: 3px solid rgba(49, 95, 67, 0.35);
   outline-offset: 2px;
@@ -435,7 +536,8 @@ select {
 
 @media (max-width: 860px) {
   .hero,
-  .toolbar {
+  .toolbar,
+  .about-records {
     grid-template-columns: 1fr;
   }
 
@@ -489,9 +591,15 @@ select {
   }
 
   .toolbar,
-  .actions {
+  .actions,
+  .about-records,
+  .faq {
     margin-top: 12px;
     padding: 12px;
+  }
+
+  .about-records {
+    gap: 18px;
   }
 
   .season-button {

@@ -4,7 +4,17 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="google-site-verification" content="RSo3Ijppk-lg1BHfXiuyc0EZAdtTOYQb8RLeIvWDt6Y">
-    <title>植物園四季採集帖</title>
+    <meta name="description" content="訪れた植物園を春・夏・秋・冬ごとに記録する、個人用の標本帳アプリです。ログイン不要。思い出を残しながら、好きな植物園を四季で巡れます。">
+    <link rel="canonical" href="https://pocket7878.github.io/BotanicGardenRecords/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="植物園四季採集帖｜植物園の訪問記録を残すアプリ">
+    <meta property="og:description" content="訪れた植物園を春・夏・秋・冬ごとに記録する、個人用の標本帳アプリです。ログイン不要。思い出を残しながら、好きな植物園を四季で巡れます。">
+    <meta property="og:url" content="https://pocket7878.github.io/BotanicGardenRecords/">
+    <meta property="og:image" content="https://pocket7878.github.io/BotanicGardenRecords/assets/ogp.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:locale" content="ja_JP">
+    <title>植物園四季採集帖｜植物園の訪問記録を残すアプリ</title>
     <link rel="icon" href="./favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="./styles.css">
   </head>
@@ -14,7 +24,7 @@
         <div class="hero__text">
           <p class="eyebrow">Botanic Garden Season Records</p>
           <h1>植物園四季採集帖</h1>
-          <p class="lead">日本各地の主要な植物園を、春・夏・秋・冬の季節ごとに記録する標本帳です。</p>
+          <p class="lead">訪れた植物園を、春・夏・秋・冬の季節ごとに記録する標本帳です。<br>その日の花や空気、また行きたいと思った気持ちを、あなた自身の採集帖に残していけます。</p>
         </div>
         <section class="summary" aria-label="進捗">
           <div><span id="summaryGardens">0</span><small>植物園</small></div>
@@ -24,6 +34,20 @@
       </header>
 
       <main>
+        <section class="about-records" aria-labelledby="aboutRecordsTitle">
+          <div>
+            <p class="section-kicker">VISIT LOG</p>
+            <h2 id="aboutRecordsTitle">訪れた季節を、あなたの標本帳に。</h2>
+            <p>行った植物園で、訪れた季節の印をひとつ記録します。同じ場所でも、春の芽吹き、夏の濃い緑、秋の実り、冬の静けさはそれぞれ違うもの。</p>
+            <p>少しずつ印を重ねていくと、自分だけの植物園の思い出ができあがります。気に入った園を、いつか四季すべてで巡る楽しみもここから始まります。</p>
+          </div>
+          <ol class="how-to-use" aria-label="使い方">
+            <li><strong>探す</strong><span>気になる植物園を、地域や名前で探す</span></li>
+            <li><strong>記す</strong><span>訪れた季節の印を付ける</span></li>
+            <li><strong>残す</strong><span>記録はブラウザ内に保存。必要ならJSONでバックアップする</span></li>
+          </ol>
+        </section>
+
         <section class="toolbar" aria-label="絞り込み">
           <label>
             <span>検索</span>
@@ -63,6 +87,23 @@
 
         <p id="resultCount" class="result-count"></p>
         <section id="gardenGrid" class="garden-grid" aria-live="polite"></section>
+
+        <section class="faq" aria-labelledby="faqTitle">
+          <p class="section-kicker">FAQ</p>
+          <h2 id="faqTitle">記録について</h2>
+          <details>
+            <summary>記録はどこに保存されますか？</summary>
+            <p>このブラウザ内に保存されます。ログインやアカウント作成は不要です。</p>
+          </details>
+          <details>
+            <summary>機種変更やブラウザを変えた場合は？</summary>
+            <p>JSONで記録を書き出しておけば、別のブラウザで読み込めます。</p>
+          </details>
+          <details>
+            <summary>四季すべてを記録しなければいけませんか？</summary>
+            <p>いいえ。好きな季節だけでも使えます。何度も訪れた園の思い出を、あなたのペースで残せます。</p>
+          </details>
+        </section>
       </main>
     </div>
     <script type="module" src="./src/app.js"></script>

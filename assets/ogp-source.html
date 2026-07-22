@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <style>
+      * { box-sizing: border-box; }
+      html, body { margin: 0; width: 1200px; height: 630px; overflow: hidden; }
+      body {
+        display: grid;
+        place-items: center;
+        color: #315f43;
+        background:
+          linear-gradient(rgba(251, 247, 234, 0.78), rgba(251, 247, 234, 0.78)),
+          url("./botanical-background.png") center / cover;
+        font-family: "Hiragino Sans", "Yu Gothic", "Meiryo", sans-serif;
+      }
+      main {
+        display: grid;
+        width: calc(100% - 92px);
+        height: calc(100% - 92px);
+        place-items: center;
+        align-content: center;
+        border: 2px solid rgba(89, 117, 85, 0.7);
+        text-align: center;
+      }
+      .eyebrow {
+        margin: 0 0 18px;
+        font-family: Georgia, serif;
+        font-size: 24px;
+        letter-spacing: 5px;
+      }
+      h1 {
+        margin: 0;
+        font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
+        font-size: 68px;
+        font-weight: 500;
+      }
+      .lead {
+        margin: 22px 0 0;
+        font-size: 29px;
+        letter-spacing: 2px;
+      }
+      .seasons {
+        display: flex;
+        gap: 28px;
+        margin: 46px 0 0;
+        padding: 0;
+        list-style: none;
+      }
+      .seasons li {
+        display: grid;
+        width: 42px;
+        height: 42px;
+        place-items: center;
+        border: 2px solid #315f43;
+        border-radius: 50%;
+        font-size: 16px;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <p class="eyebrow">BOTANIC GARDEN SEASON RECORDS</p>
+      <h1>植物園四季採集帖</h1>
+      <p class="lead">訪れた季節を、あなたの標本帳に。</p>
+      <ul class="seasons" aria-label="春夏秋冬"><li>春</li><li>夏</li><li>秋</li><li>冬</li></ul>
+    </main>
+  </body>
+</html>
