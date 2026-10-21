@@ -4,6 +4,8 @@
     "check": "node scripts/check-data.mjs",
     "serve": "python3 -m http.server 4173"
   },
-  "devDependencies": {}
+  "devDependencies": {},
+  "engines": {
+    "node": "^22.23.4 || ^24.22.1 || ^26.12.1"
+  }
 }
-
